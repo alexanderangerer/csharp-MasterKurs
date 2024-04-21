@@ -1,0 +1,26 @@
+Ganzzahlen
+byte        0                               255                             8 Bit
+short       -32'768                         32'767                          16 Bit
+int         -2'147'483'648                  2'147'483'647                   32 Bit
+long        -9'223'372'036'854'775'808      9'223'372'036'854'775'807       64 Bit
+sbyte       -128                            127                             8 Bit
+u steht für unsigned (ohne Vorzeichen)
+ushort      0                               65'535                          16 Bit  
+uint        0                               4'294'967'295                   32 Bit
+ulong       0                               18'446'744'073'709'551'615      64 Bit
+
+Fliesskommazahlen
+float       -3'402823E+38                   3'402823E+38                    4 Bytes     6-9 Stellen Genauigkeit
+double      -1'79769313486232E+308          1'79769313486232E+308           8 Bytes     15-17 Stellen Genauigkeit
+decimal     -79228162514264337593543950335  79228162514264337593543950335   16 Bytes    28-29 Stellen Genauigkeit
+
+Andere Datentypen
+Bool (Boolean)      true        false
+Sting               Textwerte in doppelten Anführungszeichen ""
+Char                Steht für Character (einzelnes Textzeichen) steht in einfachen Anführungszeichen
+
+Beim Initialisieren von float und decimal Variablen, müssen diese mit einem Sufix geschrieben werden.
+float zahl1 = 2.25; Löst einen Fehler aus, da der Compiler den Wert als double interpretiert.
+float zahl1 = 2.25F;( oder f) Zeigt dem Compailer das wir geziehlt einen float verwenden wollen.
+
+Beim decimal ist es das M oder m. D oder d wurde früher für double verwendet. deshalb ist es bei decimal das M / m. 
