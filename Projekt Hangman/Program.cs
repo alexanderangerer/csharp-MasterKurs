@@ -6,13 +6,17 @@ class Program
 
     static void Main(string[] args)
     {
+        Console.WriteLine(Environment.CurrentDirectory);
+        Console.WriteLine(Environment.MachineName);
+        Console.WriteLine(Environment.SystemDirectory);
+    
         WordsFileRead();
         MainMenu();
     }
 
     static void WordsFileRead()
     {
-        string pathFile = "/Users/aaphoto/Dev/MasterKurs/Projekt Hangman/Contents/Wordlist.txt";
+        string pathFile = "Contents/Wordlist.txt"; // "/Users/aaphoto/Dev/MasterKurs/Projekt Hangman/Contents/Wordlist.txt";
         string[] wordsArray = null;
         
         try
@@ -22,7 +26,7 @@ class Program
             wordsArray = words.Split("\n");
         }
         catch (Exception ex)
-        {
+        {  
             Console.WriteLine("Ein Fehler ist aufgetreten!");
             Console.WriteLine(ex.Message);
         }
