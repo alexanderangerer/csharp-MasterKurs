@@ -40,10 +40,24 @@ internal class Program
         // Modul7_Aufgabe4();
         // Modul7_Aufgabe5();
         // Modul7_Aufgabe6();
-        //Modul7_Aufgabe7();
-        Modul7_Aufgabe8();
+        // Modul7_Aufgabe7();
+        // Modul7_Aufgabe8();
     }
 
+    static void Modul9_Konvertierung()
+    {
+        // Implizite Konvertierung (Automatisch)
+        float float1 = 123.12F;
+        double double1 = float1;
+        
+        // Explizite Konvertierung (Manuell)
+        double double2 = 213.2;
+        float float2 = (float)double2;
+        
+        // Hilfsklassen zum Konvertieren
+        float2 = Convert.ToSingle(double2);
+    }
+    
     static void Modul7_Aufgabe8()
     {
         Console.Write("Gib einen Satz ein: ");
