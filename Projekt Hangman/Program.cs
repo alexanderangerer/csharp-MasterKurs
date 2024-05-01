@@ -133,23 +133,23 @@ class Program
                     Console.ResetColor();
                     break;
                 }
+            }
+            else
+            {
+                hiddenWord = tempHiddenWord;
+
+                if (lives > 0)
+                {
+                    lives -= 1;
+                }
                 else
                 {
-                    hiddenWord = tempHiddenWord;
-
-                    if (lives > 0)
-                    {
-                        lives -= 1;
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("GAME OVER!");
-                        Console.ReadKey();
-                        Console.ResetColor();
-                        break;
-                    }
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("GAME OVER!");
+                    Console.ReadKey();
+                    Console.ResetColor();
+                    break;
                 }
             }
             {
