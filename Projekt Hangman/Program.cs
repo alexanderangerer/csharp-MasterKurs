@@ -2,12 +2,62 @@
 
 class Program
 {
+    static string[] wordlist = null;
+
     static void Main(string[] args)
     {
+        WordsFileRead();
         MainMenu();
+    }
+
+    static void WordsFileRead()
+    {
+        string pathFile = "/Users/aaphoto/Dev/MasterKurs/Projekt Hangman/Contents/Wordlist.txt";
+        string[] wordsArray = null;
+        
+        try
+        {
+            StreamReader srWordlist = new StreamReader(pathFile);
+            string words = srWordlist.ReadToEnd();
+            wordsArray = words.Split("\n");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ein Fehler ist aufgetreten!");
+            Console.WriteLine(ex.Message);
+        }
+        
+        wordlist = WordsRead(wordsArray);
+        if (wordlist.Length < 5)
+        {
+            int exitCode = 0;
+            Console.WriteLine("Die Wortliste beinhaltet zu wenige Worte. 5 Ist das minimum.");
+            Console.WriteLine("Das Programm wird beendet.");
+            Console.ReadKey();
+            Environment.Exit(exitCode);
+        }
+        
+        
+    }
+
+    static string[] WordsRead(string[] words)
+    {
+        List <string> returnWords = new List<string>();
+        
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].IndexOf("[") == -1)
+            {
+                returnWords.Add(words[i]);
+            }
+        }
+
+        return returnWords.ToArray();
     }
     static void MainMenu()
     {
+        int action = 0;
+        
         while (true)
         {
             Console.WriteLine("### HANGMAN ###");
@@ -22,7 +72,16 @@ class Program
             Console.WriteLine();
 
             Console.Write("Aktion: ");
-            int action = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                action = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                continue;
+                //throw;
+            }
+            
             bool end = false;
 
             switch (action)
@@ -46,21 +105,9 @@ class Program
 
     static void StartGame()
     {
-        string[] words = new string[]
-        {
-            "Apfelkuchen",
-            "Programmiercode",
-            "Schreiner48",
-            "Lebensmittel",
-            "Unterhose",
-            "Küchenschrank",
-            "Schallschutzfenster",
-            "Toilettentüre"
-        };
-
         Random rnd = new Random();
-        int index = rnd.Next(0, words.Length);
-        string word = words[index].ToLower();
+        int index = rnd.Next(0, wordlist.Length);
+        string word = wordlist[index].ToLower();
         GameLoop(word);
     }
 
@@ -68,6 +115,7 @@ class Program
     {
         int lives = 10;
         string hiddenWord = "";
+        char character = ' ';
 
         for (int i = 0; i < word.Length; i++)
         {
@@ -89,7 +137,19 @@ class Program
 
             Console.WriteLine();
             Console.Write("Buchstabe: ");
-            char character = Convert.ToChar(Console.ReadLine().ToLower());
+            try
+            {
+                character = Convert.ToChar(Console.ReadLine().ToLower());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Es darf nur ein Zeichen eingegeben werden!");
+                Console.WriteLine("Alles klar?");
+                Console.ReadKey();
+                continue;
+                // throw;
+            }
+            
 
             bool foundCharacterInWord = false;
 

@@ -1,0 +1,7 @@
+[Words-Start]
+Pferd
+Lenia
+Malia
+Puppenhaus
+Computer
+[Words-End]
