@@ -10,12 +10,23 @@ class Program
 
     static void Main(string[] args)
     {
+        // Environment.CurrentDirectory: Enthält oder gibt das Arbeitsverzeichnis an.
+        // Path.GetDirectoryName: Ermittelt Informationen über das angegebene Verzeichnis.
+        // Assembly.GetEntryAssembly(): Ruft die ausführbare Prozessordatei auf.
+        // ?.Location) ?? "~"
+        // Diese Zeile Code setzt den in der App benutzten relativen Pfad auf jenen in welchen die
+        // App gestartet wurde.
         Environment.CurrentDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) ?? "~";
         
+        // In dieser Methode wird die Wordlist Datei eingelesen.
         WordsFileRead();
+        // Startet das Spiel.
         MainMenu();
     }
 
+    /// <summary>
+    /// List die Datei Wordlist.txt im Verzeichnis Contents ein und 
+    /// </summary>
     static void WordsFileRead()
     {
         string pathFile = "Contents/Wordlist.txt"; 
