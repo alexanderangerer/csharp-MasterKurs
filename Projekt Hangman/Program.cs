@@ -1,4 +1,8 @@
-﻿namespace Projekt_Hangman;
+﻿
+
+using System.Reflection;
+
+namespace Projekt_Hangman;
 
 class Program
 {
@@ -6,17 +10,15 @@ class Program
 
     static void Main(string[] args)
     {
-        Console.WriteLine(Environment.CurrentDirectory);
-        Console.WriteLine(Environment.MachineName);
-        Console.WriteLine(Environment.SystemDirectory);
-    
+        Environment.CurrentDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) ?? "~";
+        
         WordsFileRead();
         MainMenu();
     }
 
     static void WordsFileRead()
     {
-        string pathFile = "Contents/Wordlist.txt"; // "/Users/aaphoto/Dev/MasterKurs/Projekt Hangman/Contents/Wordlist.txt";
+        string pathFile = "Contents/Wordlist.txt"; 
         string[] wordsArray = null;
         
         try
@@ -40,8 +42,6 @@ class Program
             Console.ReadKey();
             Environment.Exit(exitCode);
         }
-        
-        
     }
 
     static string[] WordsRead(string[] words)
