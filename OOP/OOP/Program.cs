@@ -12,5 +12,9 @@ class Program
         konto.Einzahlung(500);
         konto.Auszahlung(1000);
         Console.WriteLine("Fertig");
+
+        Console.WriteLine(konto.Bankname);
+        konto.Bankname = "";
+        Console.WriteLine(konto.Bankname);
     }
 }

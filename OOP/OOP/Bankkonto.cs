@@ -5,6 +5,32 @@ public class Bankkonto
     // Eigenschaften
     public decimal Kontostand { get; set; }
     public String Besitzer { get; set; }
+
+    private string bankname = "";
+
+    public string Bankname
+    {
+        get
+        {
+            if (bankname == "")
+            {
+                return "Kein Name angegeben.";
+            }
+
+            return bankname;
+        }
+        set
+        {
+            if (value == "")
+            {
+                bankname = "Keine";
+            }
+            else
+            {
+                bankname = value;
+            }
+        }
+    }
     
     // Methoden
     public void Einzahlung(decimal betrag)
