@@ -29,6 +29,8 @@ class Program
     /// </summary>
     static void WordsFileRead()
     {
+        // Hier wird der Pfad zur Wortliste festgehalten. 
+        // TODO - Muss noch angepasst werden, damit die Datei auch gefunden wird. Siehe MthGirl.
         string pathFile = "Contents/Wordlist.txt"; 
         string[] wordsArray = null;
         
