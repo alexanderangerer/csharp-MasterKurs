@@ -1,4 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.JavaScript;
+using System.Xml.Schema;
 
 namespace OOP;
 
@@ -7,15 +9,46 @@ class Program
     static void Main(string[] args)
     {
         // KlassenInitialisieren();
-        Vererbung();
+        // Vererbung();
+        AsOperator();
+    }
+
+    static void AsOperator()
+    {
+        Object[] objekt = new Object[4];
+
+        objekt[0] = "Erstes Array";
+        objekt[1] = 14;
+        objekt[2] = "Dritter Array und ein Strng";
+        objekt[3] = true;
+
+        foreach (var obj in objekt)
+        {
+            String inhalt = obj as string;
+            
+            if (inhalt != null)
+            {
+                Console.WriteLine("Ist ein String, Inhalt: {0}", inhalt);
+            }
+            else
+            {
+                Console.WriteLine("Kein String");
+            }
+        }
     }
 
     static void Vererbung()
     {
+        Computer pc = new Computer("X386", 1);
         Notebook mba = new Notebook("M1", 64);
-        // mba.Prozessor = "M1";
-        // mba.Arbeitspeicher = 64;
-        // mba.Batteriestand = 55;
+
+        Console.WriteLine(mba is Computer);
+        Console.WriteLine(mba is Notebook);
+        Console.WriteLine(pc is Computer);
+        Console.WriteLine(pc is Notebook);
+        Console.WriteLine(pc is String);
+        Console.WriteLine("Hallo" is String);
+        
         
         mba.Einschalten();
         mba.Laden();
