@@ -63,18 +63,28 @@ class Program
         objekt[2] = "Dritter Array und ein Strng";
         objekt[3] = true;
 
-        foreach (var obj in objekt)
+        foreach (Person obj in objekt)
         {
-            String inhalt = obj as string;
-            
-            if (inhalt != null)
+            obj.PrintInformation();
+
+            if (obj is Teacher)
             {
-                Console.WriteLine("Ist ein String, Inhalt: {0}", inhalt);
+                (obj as Teacher).Teach();
             }
-            else
+            else if (obj is Student)
             {
-                Console.WriteLine("Kein String");
+                (obj as Student).ListenToTeacher();
             }
+            // String inhalt = obj as string;
+            //
+            // if (inhalt != null)
+            // {
+            //     Console.WriteLine("Ist ein String, Inhalt: {0}", inhalt);
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Kein String");
+            // }
         }
     }
 
