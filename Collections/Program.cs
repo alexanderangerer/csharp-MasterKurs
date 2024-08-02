@@ -4,19 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        Stack<string> ortStack = new Stack<string>();
-        
-        ortStack.Push("Safenwil");
-        ortStack.Push("Kloten");
-        ortStack.Push("Winden");
+        Queue<string> ortQueue = new Queue<string>();
+      
+        ortQueue.Enqueue("Safenwil");
+        ortQueue.Enqueue("Kloten");
+        ortQueue.Enqueue("Winden");
 
-        Console.WriteLine(ortStack.Count());
+        Console.WriteLine(ortQueue.Dequeue());
+        Console.WriteLine(ortQueue.Peek());
+        Console.WriteLine(ortQueue.Dequeue());
 
-        Console.WriteLine(ortStack.Pop());
-        Console.WriteLine(ortStack.Peek());
-        Console.WriteLine(ortStack.Pop());
-        Console.WriteLine(ortStack.Peek());
-        
+        // Stack<string> ortStack = new Stack<string>();
+        //
+        // ortStack.Push("Safenwil");
+        // ortStack.Push("Kloten");
+        // ortStack.Push("Winden");
+        //
+        // Console.WriteLine(ortStack.Count());
+        //
+        // Console.WriteLine(ortStack.Pop());
+        // Console.WriteLine(ortStack.Peek());
+        // Console.WriteLine(ortStack.Pop());
+        // Console.WriteLine(ortStack.Peek());
+        //
         // List<string> namensList = new List<string>();
         // List<string> ortList = new List<string>()
         // {
