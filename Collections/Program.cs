@@ -4,15 +4,69 @@ class Program
 {
     static void Main(string[] args)
     {
-        Queue<string> ortQueue = new Queue<string>();
-      
-        ortQueue.Enqueue("Safenwil");
-        ortQueue.Enqueue("Kloten");
-        ortQueue.Enqueue("Winden");
+        List<string> names = new List<string>();
+        
+        names.Add("Peter");
+        names.Add("Alina");
+        names.Add("Sabine");
+        names.Add("Florian");
 
-        Console.WriteLine(ortQueue.Dequeue());
-        Console.WriteLine(ortQueue.Peek());
-        Console.WriteLine(ortQueue.Dequeue());
+        Console.WriteLine("Unsortiert!");
+        Console.WriteLine("_________________________");
+
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+        
+        names.Sort();
+        
+        Console.WriteLine();
+        Console.WriteLine("Sortiert!");
+        Console.WriteLine("_________________________");
+
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+        // Dictionary<int, string> Orte = new Dictionary<int, string>();
+        //
+        // Orte.Add(8302, "Kloten");
+        // Orte.Add(5745, "Safenwil");
+        // Orte.Add(8952, "Schlieren");
+        // Orte.Add(5036, "Oberentfelden");
+        //
+        // Console.WriteLine("Der Ort mit der PLZ 8952 heisst: {0}", Orte[8952]);
+        //
+        // if (Orte.ContainsKey(8745))
+        // {
+        //     Console.WriteLine("Der Ort mit der PLZ 8952 heisst: {0}", Orte[8745]);
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Einen Key mit diesem Wert gefunden.");
+        // }
+        //
+        // foreach (KeyValuePair<int, string> Ortschaften in Orte)
+        // {
+        //     Console.WriteLine(Ortschaften.Key + " " + Ortschaften.Value);
+        // }
+        //
+        // Orte.Remove(8952);
+        // Console.WriteLine("##################");
+        // foreach (KeyValuePair<int, string> Ortschaften in Orte)
+        // {
+        //     Console.WriteLine(Ortschaften.Key + " " + Ortschaften.Value);
+        // }
+        // Queue<string> ortQueue = new Queue<string>();
+
+        // ortQueue.Enqueue("Safenwil");
+        // ortQueue.Enqueue("Kloten");
+        // ortQueue.Enqueue("Winden");
+        //
+        // Console.WriteLine(ortQueue.Dequeue());
+        // Console.WriteLine(ortQueue.Peek());
+        // Console.WriteLine(ortQueue.Dequeue());
 
         // Stack<string> ortStack = new Stack<string>();
         //
