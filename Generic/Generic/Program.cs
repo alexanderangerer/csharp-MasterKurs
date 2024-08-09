@@ -21,11 +21,11 @@ class Program
         }
     }
 
-    static void AddMultiple<T>(List<T> list, int amount, T value)
+    static void AddMultiple<T>(List<T> list, int anzahl, T wert)
     {
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < anzahl; i++)
         {
-            list.Add(value);
+            list.Add(wert);
         }
     }
 }
